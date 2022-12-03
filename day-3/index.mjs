@@ -10,16 +10,11 @@ for (let idx in alphabet) {
     priority_map[alphabet[idx]] = +idx + 1;
 }
 
-console.log(priority_map);
+// console.log(priority_map);
 
 // total sum of prioroties
 function sumOfPriorities(priorities = [0]) {
     return priorities.reduce((preV, currV) => preV + currV, 0);
-    // let sum = 0;
-    // for (let i = 0; i < priorities.length; i++) {
-    //     sum += priorities[i];
-    // }
-    // return sum;
 }
 // rucksack to priorities
 function rucksackToPriority(
@@ -37,7 +32,7 @@ function inputToRucksack(input = "") {
     const lines = input.split("\n");
     const rucksacks = [];
     lines.forEach((line) => rucksacks.push(lineToRucksack(line)));
-    console.log("input has: " + lines.length + " lines");
+    // console.log("input has: " + lines.length + " lines");
     return rucksacks;
 }
 
@@ -56,7 +51,7 @@ function getItemPriority(item = "a") {
 function lineToRucksack(line = "") {
     const length = line.length;
     const c1 = line.slice(0, length / 2);
-    const c2 = line.slice(length / 2 + 1);
+    const c2 = line.slice(length / 2);
     return [c1, c2];
 }
 
@@ -77,7 +72,7 @@ function inputToTotalPriority(input = "") {
     const rsks = inputToRucksack(input);
     const items = rsks.map((rsk, idx) => {
         const item = itemInBoth(rsk[0], rsk[1]);
-        console.log(idx, item);
+        // console.log(idx, item);
         return item;
     });
     const priorities = items.map((item) => getItemPriority(item));
