@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 const sample_input = `
 1000
@@ -65,3 +65,7 @@ processInput();
 // const biggest_callories_bag = callories_by_elf[0];
 // console.log(biggest_callories_bag);
 // console.table(callories_by_elf);
+
+export async function day1() {
+    await processInput();
+}

@@ -80,6 +80,8 @@ function inputToTotalPriority(input = "") {
     return total_p;
 }
 
+function windowed(size = 1, stream) {}
+
 async function processInput() {
     try {
         const input = await fs.promises.readFile("./input.txt", "utf8");
